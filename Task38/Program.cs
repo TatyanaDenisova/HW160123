@@ -1,9 +1,9 @@
 ﻿/*Задача 38: Задайте массив вещественных чисел. 
 Найдите разницу между максимальным и минимальным элементов массива.
 [3 7 22 2 78] -> 76*/
-int[] FullArray(int length, int start, int end)
+double[] FullArray(int length, int start, int end)
 {
-    int[] array = new int[length];
+    double[] array = new double[length];
     for (int i = 0; i < length; i++)
     {
         array[i] = new Random().Next(start, end + 1);
@@ -16,11 +16,11 @@ int getUserData(string message)
     int userData = int.Parse(Console.ReadLine()!);
     return userData;
 }
-int ResultNumber(int[] array)
+double ResultNumber(double[] array)
 {
-    int max = array[0];
-    int min = array[0];
-    int result = 0;
+    double max = array[1];
+    double min = array[1];
+    double result = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] > max)
@@ -36,7 +36,7 @@ int ResultNumber(int[] array)
     return result;
 }
 
-void PrintArray(int[] array)
+void PrintArray(double[] array)
 {
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
@@ -50,7 +50,7 @@ void PrintArray(int[] array)
     Console.WriteLine("]");
 }
 int number = getUserData("Введите количество элемнтов массива");
-int[] array = FullArray(number, 0, 20);
+double[] array = FullArray(number, 0, 20);
 PrintArray(array);
-int result = ResultNumber(array);
+double result = ResultNumber(array);
 Console.WriteLine($"Разница между максимальным и минимальным элементов массива равна {result}");
